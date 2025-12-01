@@ -1,0 +1,12 @@
+# Vim/NeoVim
+*~
+*.swp
+*.swo
+
+# Editor backups
+*.bak
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db

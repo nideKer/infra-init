@@ -1,0 +1,17 @@
+# ~/.gitconfig installed by infra-init (template)
+
+# User identity:
+# Set these explicitly either globally or per-repo.
+
+# [user]
+#     name = Your Name
+#     email = you@gmail.com
+
+[core]
+        excludesFile = ~/.gitignore_global
+
+[credential]
+        helper = store --file ~/.git_credentials
+
+[init]
+        defaultBranch = master

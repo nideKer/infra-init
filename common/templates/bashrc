@@ -1,0 +1,43 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+    *) return;;
+esac
+
+# History settings
+HISTCONTROL=ignoreboth
+HISTSIZE=200000
+HISTFILESIZE=200000
+export HISTTIMEFORMAT="%F %T "
+export HISTIGNORE="ls:cd:exit:clear"
+shopt -s histappend
+shopt -s checkwinsize
+
+# Better history search with arrow keys
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# Directory navigation. example 'cd nginx'
+# export CDPATH=".:~:/etc:/var"
+
+# Set prompt
+# Standart green PS1 without username
+PS1='\[\e[38;5;247m\]\A\[\e[32m\] \[\e[1m\]\h\[\e[36m\] \[\e[34m\]\w \[\e[32m\]\$\[\e[0m\] '
+# PS1 Purple servers style
+# PS1='\[\e[37;2m\]\A\[\e[0m\] \[\e[38;5;90;2;7m\] \[\e[48;5;244;1m\]\h \[\e[0m\] \[\e[38;5;33m\]\w\[\e[0m\] \[\e[38;5;28m\]\$\[\e[0m\] '
+# PS1 Green servers style
+# PS1='\[\e[37;2m\]\A\[\e[0m\] \[\e[36;48;5;235;1;2;7m\] \h \[\e[0m\] \[\e[38;5;33m\]\w\[\e[0m\] \[\e[38;5;28m\]\$\[\e[0m\] '
+
+# Load aliases if exist
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Enable programmable completion features
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi

@@ -1,0 +1,56 @@
+# Enable color support
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -laShF'
+
+# S+h - sort files by size 
+alias la='ls -A'
+alias l='ls -CF'
+alias etclog='cd /etc && tig'
+
+# System
+alias df='df -h'
+alias free='free -m'
+alias update='apt-get update && apt-get upgrade -y && apt-get autoremove'
+alias h='cat ~/.bash_aliases'
+alias sob='source ~/.bashrc'
+alias ver='uname -a'
+
+#docker
+alias dcu='docker compose up -d'
+alias dcr='docker compose restart'
+alias dcd='docker compose down'
+alias dr='docker restart '
+alias dp='docker ps'
+alias dpa='docker ps -a'
+alias dlf='docker logs -f '
+alias dl='docker logs '
+
+#nginx
+alias ngres='/etc/init.d/nginx reload'
+alias ngsta='/etc/init.d/nginx start'
+alias ngsto='/etc/init.d/nginx stop'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline'
+
+# Network
+alias ports='netstat -tulanp'
+alias myip='curl http://ipecho.net/plain; echo'
+
+# Misc
+alias hi='history'
+alias j='jobs -l'

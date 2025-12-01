@@ -1,0 +1,6 @@
+Host [HostName]
+    HostName IPorDNS
+    Port 22
+    #IdentityFile ~/.ssh/key_file
+    User root
+    ServerAliveInterval 60
