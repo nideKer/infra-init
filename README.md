@@ -75,6 +75,7 @@ What `init.sh` does:
 * installs and configures Docker,
 * creates `/opt/repo` owned by your user,
 * runs `bootstrap_user.sh` for the calling user (bashrc, aliases, gitconfig, ssh config).
+* set system timezone Europe/Kyiv and enables NTP (check by `timedatectl`)
 
 After this, the host is ready for role-specific configuration or application deployment.
 
