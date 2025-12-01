@@ -12,6 +12,8 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Base system initialization, common for all hosts
 if [ -x "$SCRIPT_DIR/bin/base_common.sh" ]; then
   "$SCRIPT_DIR/bin/base_common.sh"
+  # Apply timezone settings
+  set_timezone
 fi
 
 # If there's an OS/version-specific script – run it
